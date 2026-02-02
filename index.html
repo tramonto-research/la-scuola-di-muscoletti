@@ -1074,6 +1074,9 @@
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(screenId).classList.add('active');
       state.currentScreen = screenId;
+      
+      // Scroll to top for fresh page feel
+      window.scrollTo(0, 0);
 
       if (screenId === 'history') {
         renderHistory();
