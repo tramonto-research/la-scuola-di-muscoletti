@@ -805,6 +805,63 @@
       color: var(--neon-cyan);
     }
 
+    /* ===== INSTRUCTIONS SCREEN ===== */
+    .instruction-section {
+      background: var(--dark-card);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--neon-cyan);
+    }
+
+    .instruction-title {
+      font-family: var(--font-display);
+      font-size: 10px;
+      color: var(--neon-pink);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .instruction-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    .instruction-text strong {
+      color: var(--neon-yellow);
+    }
+
+    .instruction-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .instruction-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .instruction-icon {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--neon-cyan);
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .instruction-item strong {
+      color: var(--neon-yellow);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .instruction-item p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
     /* Delete session button */
     .delete-session-btn {
       width: 100%;
@@ -862,6 +919,7 @@
     <button class="action-btn" onclick="showScreen('customScheda')">+ NUOVA SCHEDA</button>
     <button class="action-btn secondary" onclick="showScreen('history')">📜 STORICO</button>
     <button class="action-btn secondary" onclick="showScreen('settings')">⚙️ IMPOSTAZIONI</button>
+    <button class="action-btn secondary" onclick="showScreen('instructions')">❓ ISTRUZIONI</button>
   </div>
 
   <!-- WORKOUT SCREEN -->
@@ -940,6 +998,91 @@
 
     <button class="action-btn" onclick="exportAllData()" style="margin-top: 30px;">💾 ESPORTA TUTTI I DATI</button>
     <button class="action-btn secondary" onclick="confirmClearAll()">🗑️ CANCELLA TUTTO</button>
+  </div>
+
+  <!-- INSTRUCTIONS SCREEN -->
+  <div id="instructions" class="screen">
+    <div class="workout-header">
+      <button class="back-btn" onclick="showScreen('home')">←</button>
+      <h2 class="workout-title">ISTRUZIONI</h2>
+      <div style="width: 48px;"></div>
+    </div>
+
+    <div class="instruction-section">
+      <h3 class="instruction-title">Come funziona</h3>
+      <p class="instruction-text">
+        La Scuola di Muscoletti ti aiuta a tenere traccia dei tuoi allenamenti.
+        Scegli una scheda, registra serie, ripetizioni e pesi, e rivedi i tuoi progressi nello storico.
+      </p>
+    </div>
+
+    <div class="instruction-section">
+      <h3 class="instruction-title">Schede Allenamento</h3>
+      <div class="instruction-item">
+        <span class="instruction-icon">🔥</span>
+        <div>
+          <strong>Riscaldamento</strong>
+          <p>Esercizi di mobilità e stretching per prepararti all'allenamento.</p>
+        </div>
+      </div>
+      <div class="instruction-item">
+        <span class="instruction-icon">A</span>
+        <div>
+          <strong>Push (Spinta)</strong>
+          <p>Petto, spalle e tricipiti - movimenti di spinta.</p>
+        </div>
+      </div>
+      <div class="instruction-item">
+        <span class="instruction-icon">B</span>
+        <div>
+          <strong>Pull (Tirata)</strong>
+          <p>Schiena e bicipiti - movimenti di tirata.</p>
+        </div>
+      </div>
+      <div class="instruction-item">
+        <span class="instruction-icon">C</span>
+        <div>
+          <strong>Legs (Gambe)</strong>
+          <p>Quadricipiti, femorali, glutei e polpacci.</p>
+        </div>
+      </div>
+      <div class="instruction-item">
+        <span class="instruction-icon">★</span>
+        <div>
+          <strong>Schede Personalizzate</strong>
+          <p>Le tue schede create con "+ NUOVA SCHEDA".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="instruction-section">
+      <h3 class="instruction-title">Durante l'Allenamento</h3>
+      <p class="instruction-text">
+        <strong>INIZIA</strong> - Avvia il timer della sessione.<br>
+        <strong>Tocca un esercizio</strong> - Espandi per inserire reps e peso.<br>
+        <strong>+ Aggiungi serie</strong> - Aggiungi una serie extra.<br>
+        <strong>× </strong> - Rimuovi una serie.<br>
+        <strong>FINE</strong> - Salva l'allenamento e torna alla home.
+      </p>
+    </div>
+
+    <div class="instruction-section">
+      <h3 class="instruction-title">Altri Pulsanti</h3>
+      <p class="instruction-text">
+        <strong>+ NUOVA SCHEDA</strong> - Crea una scheda personalizzata con i tuoi esercizi.<br><br>
+        <strong>📜 STORICO</strong> - Visualizza tutti gli allenamenti passati. Puoi filtrare per tipo di scheda ed esportare in CSV.<br><br>
+        <strong>⚙️ IMPOSTAZIONI</strong> - Cambia unità di peso (KG/LBS), esporta backup o cancella tutti i dati.
+      </p>
+    </div>
+
+    <div class="instruction-section">
+      <h3 class="instruction-title">Suggerimenti</h3>
+      <p class="instruction-text">
+        • I dati sono salvati localmente sul tuo dispositivo.<br>
+        • Usa "ESPORTA TUTTI I DATI" per fare backup.<br>
+        • Puoi installare l'app sulla home del telefono per accesso rapido.
+      </p>
+    </div>
   </div>
 
   <!-- CUSTOM SCHEDA SCREEN -->
