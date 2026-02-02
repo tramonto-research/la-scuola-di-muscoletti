@@ -1071,10 +1071,18 @@
 
     // ===== NAVIGATION =====
     function showScreen(screenId) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(screenId).classList.add('active');
+      // Hide all screens completely
+      document.querySelectorAll('.screen').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+      });
+
+      // Show the target screen
+      const targetScreen = document.getElementById(screenId);
+      targetScreen.style.display = screenId === 'splash' ? 'flex' : 'block';
+      targetScreen.classList.add('active');
       state.currentScreen = screenId;
-      
+
       // Scroll to top for fresh page feel
       window.scrollTo(0, 0);
 
